@@ -21,13 +21,14 @@ public class InsertarTest {
 		session=factory.openSession();
 		System.out.println("Sesion Hibernate iniciada...");
 		Transaction tr=session.beginTransaction();
+		//Proveedor
 		Proveedor proveedor = new Proveedor();
 		proveedor.setId("proveedor1");
 		proveedor.setTelefono("996774554");
 		proveedor.setNombre("Juan Jose");
 		proveedor.setEmail("juanjo@gmail.com");
 		session.save(proveedor);
-		
+		//Producto
 		Producto producto = new Producto();
 		producto.setId("LG_Mon1");
 		producto.setNombre("Monitor LG 23p");

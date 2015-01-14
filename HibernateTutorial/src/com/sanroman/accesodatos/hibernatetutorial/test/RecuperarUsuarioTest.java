@@ -9,11 +9,14 @@ import com.sanroman.accesodatos.hibernatetutorial.model.Usuario;
 public class RecuperarUsuarioTest {
 	
 	public static void main(String[] args) {
+		
+		//Abrimos sesion hibernate
 		Session session = null;
 		Configuration cfg = new Configuration();
 		SessionFactory factory = cfg.configure().buildSessionFactory();
 		System.out.println("Iniciando sesion en Hibernate...");
 		session = factory.openSession();
+		
 		Usuario user = (Usuario) session.get(Usuario.class, 34);
 		user.print();
 		session.close();
