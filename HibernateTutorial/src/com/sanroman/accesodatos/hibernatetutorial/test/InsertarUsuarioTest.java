@@ -6,6 +6,8 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import com.sanroman.accesodatos.hibernatetutorial.model.Domicilio;
+import com.sanroman.accesodatos.hibernatetutorial.model.Empresa;
+import com.sanroman.accesodatos.hibernatetutorial.model.Servicio;
 import com.sanroman.accesodatos.hibernatetutorial.model.Usuario;
 
 public class InsertarUsuarioTest {
@@ -47,6 +49,24 @@ public class InsertarUsuarioTest {
 		user.setTelefono("913345566");
 		
 		session.save(user);
+		
+		//Empresa
+		Empresa e = new Empresa();
+		e.setCIF("ff66677656");
+		e.setCodEmpresa("emp1234");
+		e.setTelefono("666777666");
+		e.setUrl("http://www.empresaguay.com");
+		
+		session.save(e);
+		
+		//Servicio
+		Servicio s = new Servicio();
+		s.setDescripcion("Servicio nuevo");
+		s.setEmpresa(e);
+		s.setNombre("Servicio 1");
+
+		session.save(s);
+		
 		tr.commit();
 		session.close();
 		System.out.println("Cerrando sesion Hibernate...");
