@@ -40,8 +40,8 @@ public class InsertarUsuarioTest {
 		//Usuario
 		Usuario user=new Usuario();
 		user.setId(34);
-		user.setDomicilioPrincipal(dom1);
-		user.setDomicilioSecundario(dom2);
+		user.getDomicilios().add(dom1);
+		user.getDomicilios().add(dom2);
 		user.setEmail("luis@gmail.com");
 		user.setName("Jose");
 		user.setTelefono("913345566");
